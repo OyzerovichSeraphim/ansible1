@@ -1,0 +1,9 @@
+- hosts: [test] #51.250.105.206
+  gather_facts: no
+  tasks:
+  - name: add new user
+  user: name=user1 groups=sudo
+  generate_ssh_key: yes
+  ssh_key_bits: 2048
+  ssh_key_file: .ssh/id_rsa
+  key: "{{ lookup('file', '/home/user1/.ssh/id_rsa_pub') }}"
