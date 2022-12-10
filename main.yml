@@ -1,0 +1,10 @@
+---
+- name: step1
+  yum:
+    name: vsftpd
+    state: installed
+- name: step2
+  service:
+    name: vsftpd
+    state: started
+    enabled: yes
